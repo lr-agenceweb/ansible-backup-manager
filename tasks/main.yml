@@ -1,0 +1,5 @@
+---
+- include: init.yml
+- include: database.yml
+- include: ftp.yml
+- include: cron.yml

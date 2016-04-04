@@ -1,0 +1,12 @@
+---
+- name: Disable mysql backup
+  replace:
+    dest: /etc/backup-manager.conf
+    regexp: export BM_MYSQL_DATABASES="__ALL__"
+    replace: export BM_MYSQL_DATABASES=""
+
+- name: Disable postgresql backup
+  replace:
+    dest: /etc/backup-manager.conf
+    regexp: export BM_PGSQL_DATABASES="__ALL__"
+    replace: export BM_PGSQL_DATABASES=""

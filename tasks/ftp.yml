@@ -1,0 +1,30 @@
+---
+- name: Use FTP as backup upload
+  replace:
+    dest: /etc/backup-manager.conf
+    regexp: export BM_UPLOAD_METHOD="scp"
+    replace: 'export BM_UPLOAD_METHOD="{{ backup_manager_conf.bm_upload_method }}"'
+
+- name: Set dest upload for FTP backup
+  replace:
+    dest: /etc/backup-manager.conf
+    regexp: export BM_UPLOAD_DESTINATION="/var/archives/uploads"
+    replace: 'export BM_UPLOAD_DESTINATION="{{ backup_manager_conf.bm_upload_destination }}"'
+
+- name: Set upload FTP user
+  replace:
+    dest: /etc/backup-manager.conf
+    regexp: export BM_UPLOAD_FTP_USER=""
+    replace: 'export BM_UPLOAD_FTP_USER="{{ backup_manager_conf.bm_upload_ftp_user }}"'
+
+- name: Set upload FTP password
+  replace:
+    dest: /etc/backup-manager.conf
+    regexp: export BM_UPLOAD_FTP_PASSWORD=""
+    replace: 'export BM_UPLOAD_FTP_PASSWORD="{{ backup_manager_conf.bm_upload_ftp_password }}"'
+
+- name: Set upload FTP host
+  replace:
+    dest: /etc/backup-manager.conf
+    regexp: export BM_UPLOAD_FTP_HOSTS=""
+    replace: 'export BM_UPLOAD_FTP_HOSTS="{{ backup_manager_conf.bm_upload_ftp_hosts }}"'

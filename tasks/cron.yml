@@ -1,0 +1,6 @@
+---
+- name: Upload script to cron folder
+  template:
+    src: templates/backup-manager.cron
+    dest: /etc/cron.{{ backup_manager_conf.bm_frequency }}/backup-manager
+    mode: 0751

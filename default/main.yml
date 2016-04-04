@@ -1,0 +1,9 @@
+---
+backup_manager_conf:
+  bm_frequency: daily # hourly / monthly / weekly
+  bm_archive_ttl: 5 # Days to keep releases
+  bm_upload_method: ftp
+  bm_upload_destination: /var/backups
+  bm_upload_ftp_user: user
+  bm_upload_ftp_password: password
+  bm_upload_ftp_hosts: host

@@ -1,0 +1,18 @@
+---
+- name: Install backup-manager package
+  apt:
+    name: backup-manager
+    update_cache: yes
+    state: present
+
+- name: Update days number to keep releases
+  replace:
+    dest: /etc/backup-manager.conf
+    regexp: export BM_ARCHIVE_TTL="5"
+    replace: 'export BM_ARCHIVE_TTL="{{ backup_manager_conf.bm_archive_ttl }}"'
+
+- name: Add www folder path to add to tar.gz backup
+  replace:
+    dest: /etc/backup-manager.conf
+    regexp: export BM_TARBALL_DIRECTORIES="/etc /home"
+    replace: export BM_TARBALL_DIRECTORIES="/etc {{ user_home_directory }}/www"

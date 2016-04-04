@@ -1,0 +1,17 @@
+---
+dependencies: []
+
+galaxy_info:
+  author:              Anthony ROBIN
+  company:             L&R Agence Web
+  description: >
+    This role will assume the setup of backup-manager
+  license: MIT
+  min_ansible_version: 1.9.0
+  platforms:
+    - name: Debian
+      versions:
+        - trusty
+  categories:
+    - development
+    - web

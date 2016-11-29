@@ -16,3 +16,9 @@
     dest: /etc/backup-manager.conf
     regexp: export BM_TARBALL_DIRECTORIES="/etc /home"
     replace: export BM_TARBALL_DIRECTORIES="/etc {{ user_home_directory }}/www"
+
+- name: Do not try to burn backup archive
+  replace:
+    dest: /etc/backup-manager.conf
+    regexp: export BM_BURNING_METHOD="CDRW"
+    replace: export BM_BURNING_METHOD="none"
